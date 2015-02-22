@@ -1,0 +1,1121 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><script id="f5_cspm">(function(){var f5_cspm={f5_p:'DBLDEAJJLINGOOFICCOMJFCFPDNKKPBJOCCHLKMPLOGBGELOAKPPLNODLCPADDFNBCGCAEBFHLFFCFHDAEFMKHCCPKFLGKJFOBNIPMGINCLGCBLHBNNBIOKKCHNACBBC',setCharAt:function(str,index,chr){if(index>str.length-1)return str;return str.substr(0,index)+chr+str.substr(index+1);},get_byte:function(str,i){var s=(i/16)|0;i=(i&15);s=s*32;return((str.charCodeAt(i+16+s)-65)<<4)|(str.charCodeAt(i+s)-65);},set_byte:function(str,i,b){var s=(i/16)|0;i=(i&15);s=s*32;str=f5_cspm.setCharAt(str,(i+16+s),String.fromCharCode((b>>4)+65));str=f5_cspm.setCharAt(str,(i+s),String.fromCharCode((b&15)+65));return str;},set_latency:function(str,latency){latency=latency&0xffff;str=f5_cspm.set_byte(str,32,(latency>>8));str=f5_cspm.set_byte(str,33,(latency&0xff));str=f5_cspm.set_byte(str,27,2);return str;},wait_perf_data:function(){try{var wp=window.performance.timing;if(wp.loadEventEnd>0){var res=wp.loadEventEnd-wp.navigationStart;if(res<60001){var cookie_val=f5_cspm.set_latency(f5_cspm.f5_p,res);window.document.cookie='aaaaaaaaaaaaaaa='+encodeURIComponent(cookie_val)+';path=/';}
+return;}}
+catch(err){return;}
+setTimeout(f5_cspm.wait_perf_data,100);return;},go:function(){var chunk=window.document.cookie.split(/\s*;\s*/);for(var i=0;i<chunk.length;++i){var pair=chunk[i].split(/\s*=\s*/);if(pair[0]=='f5_cspm'){if(pair[1]=='1234'){var d=new Date();d.setTime(d.getTime()-1);window.document.cookie='f5_cspm=;expires='+d.toUTCString()+';path=/;';setTimeout(f5_cspm.wait_perf_data,100);}}}}}
+f5_cspm.go();}());</script><!-- PageID 1135 - published by Open Text Web Solutions 10.1 - 10.1.2.287 - 33916 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<link rel="icon" type="image/png" href="/share/images/icons/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/css/content.css" media="screen,projection" />
+
+
+<link rel="stylesheet" type="text/css" href="/share/css/print.css" media="print" />
+
+
+<!--NEW-2013 Scripts and CSS-->
+<link rel="stylesheet" href="http://www.westga.edu/themefiles/basic-slider/css/basic-jquery-slider.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://www.westga.edu/css/2013-homepage.css" media="screen,projection" />
+<link href="http://www.westga.edu/themefiles/css/slider.css" type="text/css" rel="stylesheet" />
+
+<!-- Include jQuery Librarys-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.westga.edu/themefiles/js/jquery.hoverIntent.minified.js"></script>
+<link type="text/css" href="http://www.westga.edu/themefiles/css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+
+
+<script>
+  $(function() {
+    $( "#dialog" ).dialog({
+      show: "slow",
+      resizable: false,
+      width: 350,
+      height: 175,
+      autoOpen: false,
+      show: {
+        effect: "fade",
+        duration: 200
+      },
+      hide: {
+        effect: "fade",
+        duration: 200
+      },
+      position: {
+          my: "right top",
+          at: "bottom",
+          of: "#opener"
+      }
+      
+    });
+ 
+    $( "#opener" ).click(function() {
+      $( "#dialog" ).dialog( "open");
+    });
+  });
+  </script>
+<script type="text/javascript">
+$(function(){
+        // Accordion
+        $("#accordion").accordion({ collapsible: true });        
+        $("#accordion").accordion( "option", "icons", null);
+                
+    });
+</script><!-- Let's do the animation -->
+    <script type="text/javascript">
+    $(function() {
+        // set opacity to nill on page load
+        $("ul#menu span.menu-item").css("opacity","0");
+        // on mouse over
+        $("ul#menu span.menu-item").hover(function () {
+            // animate opacity to full
+            $(this).stop().animate({
+                opacity: .5
+            }, 'slow');
+        },
+        // on mouse out
+        function () {
+            // animate opacity to nill
+            $(this).stop().animate({
+                opacity: 0
+            }, 'slow');
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    function megaHoverOver(){
+        $(this).find(".sub").stop().fadeTo('fast', 1).show();
+            
+        //Calculate width of all ul's
+        (function($) { 
+            jQuery.fn.calcSubWidth = function() {
+                rowWidth = 0;
+                //Calculate row
+                $(this).find("ul").each(function() {                    
+                    rowWidth += $(this).width(); 
+                });    
+            };
+        })(jQuery); 
+        
+        if ( $(this).find(".row").length > 0 ) { //If row exists...
+            var biggestRow = 0;    
+            //Calculate each row
+            $(this).find(".row").each(function() {                               
+                $(this).calcSubWidth();
+                //Find biggest row
+                if(rowWidth > biggestRow) {
+                    biggestRow = rowWidth;
+                }
+            });
+            //Set width
+            $(this).find(".sub").css({'width' :biggestRow});
+            $(this).find(".row:last").css({'margin':'0'});
+            
+        } else { //If row does not exist...
+            
+            $(this).calcSubWidth();
+            //Set Width
+            $(this).find(".sub").css({'width' : rowWidth});
+            
+        }
+    }
+    function megaHoverOut(){ 
+      $(this).find(".sub").stop().fadeTo('fast', 0, function() {
+          $(this).hide(); 
+      });
+    }
+    var config = {    
+         sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)    
+         interval: 100, // number = milliseconds for onMouseOver polling interval    
+         over: megaHoverOver, // function = onMouseOver callback (REQUIRED)    
+         timeout: 500, // number = milliseconds delay before onMouseOut    
+         out: megaHoverOut // function = onMouseOut callback (REQUIRED)    
+    };
+    $("ul#menu li .sub").css({'opacity':'0'});
+    $("ul#menu li").hoverIntent(config);
+//START Added on May 17, 2013 by Andrew Nelson to be used with the Logon Popup
+    //select all the a tag with name equal to modal
+    $('a[name=modal]').click(function(e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        
+        //Get the A tag
+        var id = $(this).attr('href');
+    
+        //Get the screen height and width
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+    
+        //Set heigth and width to mask to fill up the whole screen
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+        
+        //transition effect        
+        $('#mask').fadeIn(500);    
+        $('#mask').fadeTo("fast",0.8);    
+    
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+              
+        //Set the popup window to center
+        $(id).css('top',  winH/2-$(id).height()/2);
+        $(id).css('left', winW/2-$(id).width()/2);
+    
+        //transition effect
+        $(id).fadeIn(500); 
+    
+    });
+    
+    //if close button is clicked
+    $('.window .close').click(function (e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        
+        $('#mask').hide();
+        $('.window').hide();
+    });        
+    
+    //if mask is clicked
+    $('#mask').click(function () {
+        $(this).hide();
+        $('.window').hide();
+    });            
+    $(window).resize(function () {
+     
+         var box = $('#boxes .window');
+ 
+        //Get the screen height and width
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+      
+        //Set height and width to mask to fill up the whole screen
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+               
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+        //Set the popup window to center
+        box.css('top',  winH/2 - box.height()/2);
+        box.css('left', winW/2 - box.width()/2);
+     
+    });
+    
+    //Get all the LI from the #tabMenu UL
+    $('#tabMenu li').click(function(){
+    //perform the actions when it's not selected
+    if (!$(this).hasClass('selected')) {    
+           
+        //remove the selected class from all LI    
+        $('#tabMenu li').removeClass('selected');
+        
+        //Reassign the LI
+        $(this).addClass('selected');
+        
+        //Hide all the DIV in .boxBody
+        $('.boxBody div.parent').slideUp('1500');
+        
+        //Look for the right DIV in boxBody according to the Navigation UL index, therefore, the arrangement is very important.
+        $('.boxBody div.parent:eq(' + $('#tabMenu > li').index(this) + ')').slideDown('1500');
+        
+     }
+    });
+    //END Added on May 17, 2013 by Andrew Nelson to be used with the Logon Popup
+
+    //START Added on May 22, 2013 by Andrew Nelson to be used with the Logon Popup
+    //if close button is clicked
+    $('.window .close').click(function (e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        
+        $('#mask').hide();
+        $('.window').hide();
+    });        
+    
+    //if mask is clicked
+    $('#mask').click(function () {
+        $(this).hide();
+        $('.window').hide();
+    });
+    //END Added on May 22, 2013 by Andrew Nelson to be used with the Logon Popup
+
+
+// function for the news and events hover
+    $('#news_scroller').cycle({
+        fx: 'fade',
+        //fx:     'scrollDown',
+        pause:  1, // pause on hover
+        random:  1
+    });
+    $(".news_teaser").hide(); //hide news teaser on page load
+    $(".news_content").hover(function(){
+                                      
+                $(".news_headline").fadeTo(300, 0); // fadeout headline
+                $(".news_teaser").fadeTo(300, 1); // show teaser
+                $(".news_headline").hide(); //hide headline so teaser can be clicked
+                },function(){
+                $(".news_headline").fadeTo(300, 1);
+                $(".news_teaser").fadeTo(300, 0);
+                $(".news_teaser").hide();
+            
+    });
+
+});
+    </script>
+
+<title>500 | The University of West Georgia</title>
+</head>
+<body>
+<div id="wrapper">
+   <div id="container">
+    <div id="header">
+    <div id="uwg_logo">
+        
+            <a href="/"></a>
+        
+        
+        <h1>University of West Georgia</h1>
+    </div>
+    <div id="toolbar_container">
+                  
+          <ul id="toolbar">
+             <li><a href="/index_contact.php">Contact Us</a></li>
+             <li><a href="/index_map.php">Maps & Directions</a></li>
+             <li><a href="/index_a2z.php">A-Z Index</a></li>
+             <li><a href="http://events.westga.edu/">Calendars</a></li>
+             
+                <li class="last text_only"><a href="http://assistive.usablenet.com/tt/www.westga.edu">Text Only</a></li>
+             
+             
+                <li class="last log_on"><a href="#dialog1" name="modal">Log On</a></li>
+
+
+             
+          </ul>
+<div id="header_give"><a href="http://www.westga.edu/alumni/index_20437.php"><span>Give</span></a></div>
+         
+        <form id="searchform" action="/index_combo-search.php" method="get">
+         <p><input name="q" type="text" class="search_words" id="searchwords" value=""
+         accesskey="s" />
+        <input type="image" name="search" class="image" id="go" src="/images/cssimages/icons/go_button.gif" alt="search" /></p>
+        </form>
+<!-- START Added on May 17, 2013 by Andrew Nelson to be used with the Logon Popup -->  
+                <!-- Start of Login Dialog -->
+                <div id="boxes">  
+                    <div id="dialog1" class="window">
+                <div class="close"></div>
+                        <div class="d-header">
+                            <div class="box">
+                                <ul id="tabMenu">
+                                    <li class="myuwg selected"><a href="#tabs-logon-1"><img src="images/myuwg-logo.png" alt="myUWG" />    </a></li>
+                                    <li class="dtwol"><a href="#tabs-logon-2"><img src="images/d2l.png" alt="CourseDen D2L" />    </a></li>
+                                </ul>
+                            <div class="boxTop"></div>
+                                <div class="boxBody">
+                                    <div id="tabs-logon-1" class="show parent">
+                                        <ul>
+                                            <li><script language="javascript1.2"> 
+var userpwdFocus = false;
+var hasRecovery  = false;
+var testvar      = 'xxx';
+function hadFocusPU(set) {
+  if (set) userpwdFocus = true;
+    return userpwdFocus;
+  }
+
+function xferFocusPU() {
+  document.cploginPU.pass.focus();
+  }
+ 
+function loginPU() {
+  setQueryAsCookiePU();
+  document.cploginPU.user.value=document.useridPU.user.value;
+  var user = document.cploginPU.user.value;
+  var pass = document.cploginPU.pass.value; 
+  var url  = '/share/includes/check_imap.php?user=' + user + '&pass=' + pass
+  document.getElementById('workframe').src = url;
+  //document.cploginPU.submit();
+  }
+
+function setQueryAsCookiePU() {
+var query = document.location.search;
+if (query.length > 1) 
+  document.cookie = "query=" + encodeURIComponent(query) + "; path=/; domain=.westga.edu;"
+else 
+  document.cookie = "query=; path=/; domain=.westga.edu; expires=" + (new Date(0)).toGMTString();
+}
+
+
+</script>
+
+<script>
+$(function() {
+  $("#user").focus();
+});
+$('.log_on').click(function() {
+	$("#user").focus();
+});
+</script>
+<form name="useridPU" onSubmit="xferFocusPU(this); return false;" class="log_on_form">
+	<div class="uwgid">
+		<p>myUWG now uses UWG ID username & password <br /></p>
+	</div>
+<b>Username:</b> <input class="text_field" type="text" name="user" tabindex="1" onFocus="hadFocusPU(true);" id="user" />
+</form>
+
+<form name="cploginPU" 
+      action="https://myuwg.westga.edu/cp/home/login" 
+      onSubmit="loginPU(); return false;" method="post" 
+      class="log_on_form"> 
+<b>Password:</b> <input class="text_field" type="password" name="pass" tabindex="2" onFocus="hadFocusPU(true);" />
+<input type="hidden" name="user" value="">
+</form>
+<div class="log_on_links">
+<a href="https://grim.westga.edu/pls/UWGP_DAD/hwwkpinc.P_GetStudentInfo">Forgot Password?</a> |
+<a href="https://grim.westga.edu/pls/UWGP_DAD/p_lookup_cpid" 
+   onMouseover="window.status=''; return true;">Lookup Username</a>
+	<div class="uwgid_info">
+		<a href=" https://docs.google.com/a/westga.edu/document/d/1-mjL6reO6x4mINOuDeu94xilTvINFqze-TXhQT44j78/edit" >Information about UWG ID.<br />
+			<img src="/share/images/icons/uwg-paw-smll.png" alt="UWG ID Info" title="Information on UWG ID Login" />
+		</a>
+	</div>
+</div>
+
+<input type="submit" name="login_btn" class="log_in_button" value="Log On" alt="Log In" onClick="loginPU();" />
+
+<iframe id='workframe' frameborder=3 style='width: 0px; height: 0px; border: 0px solid black;'></iframe></li>    
+                                        </ul>                        
+                                    </div>
+                                    <div id="tabs-logon-2" class="parent">                        
+                                        <ul>
+                                            <li><script language="JavaScript" type="text/javascript">
+var submitted=false;
+function submitLogon() {
+  var idform = document.useridForm;
+  var now = new Date();
+  var tzo = now.getTimezoneOffset()/60;
+  if ( idform.userName.value == '' ) {
+    alert('Enter the user name.');
+    idform.userName.focus();
+    return false;
+  }
+  else if ( idform.password.value == '' ) {
+    alert('Enter the password.');
+    idform.password.focus();
+    return false;
+  } 
+  else {
+    //submitted=true;
+    idform.action = "https://westga.view.usg.edu/d2l/lp/auth/login/login.d2l";
+    idform.submit();
+    idform.timeZoneOffset.value = tzo;
+  }
+}
+
+function submitLogonHelp() {
+  var form = document.forms[0];
+  form.action = "http://coursedenlookup.westga.edu/";
+  form.submit();
+}
+</script>
+<script>
+$(function() {
+  $("#userName").focus();
+});
+</script>
+<form name="useridForm" action="#" method="post" onSubmit="return submitLogon();" class="course_den_log_on_form">
+  <div class="uwgid">
+	<p>CourseDen now uses UWG ID username & password<br /></p>
+  </div>
+  <strong>Username:</strong><br /><input type="text" name="userName" id="userName" title="Username" class="course_den_text_field" />
+  <strong>Password:&nbsp;</strong><br /><input type="password" name="password" class="course_den_text_field" id="password" maxlength="40" title="Password" />
+<div class="course_den_log_on_links">
+ 
+  <a href="http://coursedenlookup.westga.edu/">Forgot Password?</a>
+  <div class="uwgid_info">
+	<a href=" https://docs.google.com/a/westga.edu/document/d/1-mjL6reO6x4mINOuDeu94xilTvINFqze-TXhQT44j78/edit" >Information about UWG ID.<br />
+			<img src="/share/images/icons/uwg-paw-smll.png" alt="UWG ID Info" title="Information on UWG ID Login" />
+	</a>
+  </div>
+</div>
+  <input type="submit" name="login_btn" class="course_den_log_in_button" value="Log On" alt="Log On" onclick="submitLogon();" />
+
+  <input type="hidden" name="actionType" />
+  <input type="hidden" name="gotoid" value="" />
+  <input type="hidden" name="glcid" value="URN:X-WEBCT-VISTA-V1:02f06184-a818-5d85-016b-ced8db73d0e6" />
+  <input type="hidden" name="insId" value="18361011" />
+  <input type="hidden" name="insName" value="University of West Georgia" />
+  <input type="hidden" name="newUserGlcid" value="URN:X-WEBCT-VISTA-V1:02f06184-a818-5d85-016b-ced8db73d0e6" />
+  <input type="hidden" name="timeZoneOffset" />
+</form></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="boxBottom"></div>
+                            </div>            
+                        </div>     
+                    </div>
+                <!-- Mask to cover the whole screen -->
+                    <div id="mask"></div>
+                </div><!-- End of Login Dialog -->
+                <!-- END Added on May 17, 2013 by Andrew Nelson to be used with the Logon Popup  -->
+    </div><!--end toolbar container-->
+</div><!--end header-->
+<div id="nav">
+        <ul id="menu">
+         
+<li>
+
+
+
+<a href="/index_students.php">
+    <span class="menu-item">Current&nbsp;Student</span>Current Student
+</a>
+
+<div class="sub" style="">
+    <ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Current Student Column 1</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/advising/ ">Academic Advising</a></li>
+
+<li><a href="index_calendar.php">Academic Calendar</a></li>
+
+<li><a href="https://grim.westga.edu/">BanWeb</a></li>
+
+<li><a href="http://careerweb.westga.edu/index.php">Career Services</a></li>
+
+<li><a href="https://grim.westga.edu/pls/UWGP_DAD/hwwkbull.p_catalog">Catalog of Courses</a></li>
+
+<li><a href="http://westga.view.usg.edu">CourseDen Login</a></li>
+
+<li><a href="http://www.campusdish.com/en-us/CSS/WestGeorgia ">Dining Services</a></li>
+
+<li><a href="http://www.westga.edu/finaid/ ">Financial Aid</a></li>
+
+<li><a href="http://www.westga.edu/assets/docs/Grad-current.pdf ">Graduate Catalog</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Current Student Column 2</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/health/">Health Services</a></li>
+
+<li><a href="http://www.westga.edu/wolvesCard/index_2636.php">HigherOne Card</a></li>
+
+<li><a href="http://www.westga.edu/library/">Library</a></li>
+
+<li><a href="http://myuwg.westga.edu/cp/home/loginf">myUWG</a></li>
+
+<li><a href="http://www.westga.edu/parking/">Parking Services</a></li>
+
+<li><a href="http://www.westga.edu/pubprint/">Publications and Printing</a></li>
+
+<li><a href="http://www.westga.edu/financialAid/index_2939.php">Scholarships</a></li>
+
+<li><a href="http://www.westga.edu/registrar/766.php">The Scoop</a></li>
+
+<li><a href="https://grim.westga.edu/www/schedule.htm">Class Bulletin</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Current Student Column 3</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/~handbook/index.php">Student Handbook</a></li>
+
+<li><a href="http://www.westga.edu/its/index_5035.php">Student ITS</a></li>
+
+<li><a href="http://www.westga.edu/registrar/456.php">Transcript Request</a></li>
+
+<li><a href="http://www.westga.edu/assets/docs/UG-current.pdf">Undergraduate Catalog</a></li>
+
+<li><a href="http://www.westga.edu/police/">University Police</a></li>
+
+<li><a href="http://www.thewestgeorgian.com/">The West Georgian</a></li>
+
+<li><a href="http://www.westga.edu/its/index_20293.php">Wireless Access</a></li>
+
+<li><a href="http://www.westga.edu/thewolf/">The WOLF Internet Radio</a></li>
+
+<li><a href="http://www.westga.edu/wolvesCard/">Wolves Card</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Navigation Column 3647</a>
+</h2>
+
+</li>
+
+
+</ul>
+</div>
+
+</li>
+<li>
+
+
+
+<a href="/index_future.php">
+    <span class="menu-item">Future&nbsp;Student</span>Future Student
+</a>
+
+<div class="sub" style="">
+    <ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Future Student Column 1</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/admissions/prep.php">Application Status Check</a></li>
+
+<li><a href="https://grim.westga.edu/pls/UWGP_DAD/hwwkbull.p_catalog">Catalog of Courses</a></li>
+
+<li><a href="https://grim.westga.edu/www/schedule.htm# ">Class Bulletin</a></li>
+
+<li><a href="http://www.campusdish.com/en-us/CSS/WestGeorgia ">Dining Services</a></li>
+
+<li><a href="http://www.westga.edu/~admiss/costofattendance.pdf" target="_blank">Fees &amp; Tuition</a></li>
+
+<li><a href="http://www.westga.edu/assets/docs/Grad-current.pdf">Graduate Catalog</a></li>
+
+<li><a href="/index_majors_grad.php">Graduate Programs and Degrees</a></li>
+
+<li><a href="http://www.westga.edu/gradstudies">Graduate Studies</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Future Student Column 2</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/health">Health Services</a></li>
+
+<li><a href="http://www.westga.edu/wolvesCard/index_2636.php ">HigherOne Card</a></li>
+
+<li><a href="http://uwgonline.westga.edu/">Online Learning</a></li>
+
+<li><a href="http://www.westga.edu/parking/">Parking Services</a></li>
+
+<li><a href="http://www.westga.edu/orientation">New Student Orientation</a></li>
+
+<li><a href="http://www.westga.edu/index_contact.php">Request Other Information</a></li>
+
+<li><a href="http://www.westga.edu/~admiss/info_request.php">Request Undergraduate Information</a></li>
+
+<li><a href="http://westga.mycampusweb.com/">Request E-Brochure</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Future Student Column 3</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/admissions">Undergraduate Admissions</a></li>
+
+<li><a href="http://www.westga.edu/assets/docs/UG-current.pdf ">Undergraduate Catalog</a></li>
+
+<li><a href="http://www.westga.edu/index_majors.php ">Undergraduate Programs &amp; Degrees</a></li>
+
+<li><a href="http://www.westga.edu/newnan/">UWG - Newnan</a></li>
+
+<li><a href="http://www.westga.edu/wolvesCard ">Wolves Card</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Navigation Column 3652</a>
+</h2>
+
+</li>
+
+
+</ul>
+</div>
+
+</li>
+<li>
+
+
+
+<a href="http://www.westga.edu/development/">
+    <span class="menu-item">Alumni&nbsp;&amp;&nbsp;Friends</span>Alumni &amp; Friends
+</a>
+
+<div class="sub" style="">
+    <ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Alumni Column 1</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/development/40.php">Alumni Association</a></li>
+
+<li><a href="http://www.westga.edu/development/38.php">Alumni Benefits</a></li>
+
+<li><a href="http://www.westga.edu/alumni/index.php ">Alumni Website</a></li>
+
+<li><a href="http://www.westga.edu/development/57.php">Annual Fund</a></li>
+
+<li><a href="http://careerweb.westga.edu/index_3044.php">Career Services</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Alumni Column 2</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/development/52.php">Events and Activities</a></li>
+
+<li><a href="http://www.westga.edu/development/48.php">Homecoming</a></li>
+
+<li><a href="http://www.westga.edu/development/55.php">I Give to UWG Because ...</a></li>
+
+<li><a href="http://www.westga.edu/development/45.php">Keep In Touch</a></li>
+
+<li><a href="http://www.alumniconnections.com/westga/">Online Alumni Community</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Alumni Column 3</a>
+</h2>
+
+</li>
+
+
+<li><a href="https://secure.www.alumniconnections.com/olc/pub/WGU/onlinegiving/showGivingForm.jsp?form_id=114487">Online Giving</a></li>
+
+<li><a href="http://www.uwgperspective.com/ ">Perspective Magazine</a></li>
+
+<li><a href="http://www.westga.edu/foundation">UWG Foundation</a></li>
+
+<li><a href="http://www.westga.edu/development/60.php">Ways to Give</a></li>
+
+<li><a href="http://www.westga.edu/development/42.php">Young Alumni Council</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Navigation Column 3656</a>
+</h2>
+
+</li>
+
+
+</ul>
+</div>
+
+</li>
+<li>
+
+
+
+<a href="/index_faculty.php">
+    <span class="menu-item">Faculty&nbsp;&amp;&nbsp;Staff</span>Faculty &amp; Staff
+</a>
+
+<div class="sub" style="margin-left:-300px;">
+    <ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Fac-Staff Column 1</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://events.westga.edu/EventList.aspx?fromdate=1/1/2013&todate=12/31/2013&display=Year&display=Month&view=DateTime">Academic Calendar</a></li>
+
+<li><a href="https://portal.adp.com">ADP Log In</a></li>
+
+<li><a href="http://www.westga.edu/its/index_5139.php">Banner</a></li>
+
+<li><a href="https://grim.westga.edu/">BanWeb</a></li>
+
+<li><a href="http://www.westga.edu/~chronicl">The Campus Chronicle</a></li>
+
+<li><a href="https://grim.westga.edu/pls/UWGP_DAD/hwwkbull.p_catalog">Catalog of Courses</a></li>
+
+<li><a href="http://westga.view.usg.edu">CourseDen Login</a></li>
+
+<li><a href="http://www.westga.edu/hrpay/index_benefits.php">Employee Benefits</a></li>
+
+<li><a href="http://www.westga.edu/~training/month.php">Faculty/Staff Training</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Fac-Staff Column 2</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/vpaa/index_1813.php">Faculty Senate</a></li>
+
+<li><a href="http://www.bf.westga.edu/SiteMap/Forms/">Frequently Used Forms</a></li>
+
+<li><a href="http://www.westga.edu/ucm/index_151.php">Get Publicity</a></li>
+
+<li><a href="http://www.westga.edu/hrpay/index_forms.php">Human Resources Forms</a></li>
+
+<li><a href="http://www.westga.edu/its/index_5033.php">ITS</a></li>
+
+<li><a href="http://myuwg.westga.edu">myUWG</a></li>
+
+<li><a href="https://dfs-fscon.gafirst.usg.edu/psp/F89PRD/?cmd=login&errorPg=ckreq&languageCd=ENG ">PeopleSoft Budget Report Portal </a></li>
+
+<li><a href="https://dfs-fineapps.gafirst.usg.edu/psp/F89PRD/?cmd=login&languageCd=ENG&">PeopleSoft Travel and Expense Portal</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Fac-Staff Column 3</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/pubprint/">Publications and Printing</a></li>
+
+<li><a href="http://www.westga.edu/oso/index.php">Research</a></li>
+
+<li><a href="http://www.westga.edu/~sac">Staff Advisory Council</a></li>
+
+<li><a href="http://www.westga.edu/travel/index_12214.php">Travel Forms</a></li>
+
+<li><a href="http://www.westga.edu/travel">Travel Services</a></li>
+
+<li><a href="http://www.westga.edu/police">University Police</a></li>
+
+<li><a href="http://www.westga.edu/ucm/index_2989.php">UWG Daily Report</a></li>
+
+<li><a href="http://www.westga.edu/its/index_5318.php">Webmail</a></li>
+
+<li><a href="https://hank.westga.edu/">Wolf Watch</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Navigation Column 3660</a>
+</h2>
+
+</li>
+
+
+</ul>
+</div>
+
+</li>
+<li>
+
+
+
+<a href="/index_parents.php">
+    <span class="menu-item">Parents</span>Parents
+</a>
+
+<div class="sub" style="margin-left:-300px;">
+    <ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Parents Column 1</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.campusdish.com/en-us/CSS/WestGeorgia">Dining Services</a></li>
+
+<li><a href="http://www.westga.edu/bursar/index_4082.php">Fees &amp; Tuition</a></li>
+
+<li><a href="http://www.westga.edu/index_finaid.php">Financing College</a></li>
+
+<li><a href="http://www.westga.edu/wolvesCard/index_2636.php">HigherOne Card</a></li>
+
+<li><a href="http://www.westga.edu/health">Health Services</a></li>
+
+<li><a href="http://www.westga.edu/~orient">New Student Orientation</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Parents Column 2</a>
+</h2>
+
+</li>
+
+
+<li><a href="http://www.westga.edu/parents">Parent Programs</a></li>
+
+<li><a href="http://www.westga.edu/parking">Parking Services</a></li>
+
+<li><a href="http://www.westga.edu/admissions">Undergraduate Admissions</a></li>
+
+<li><a href="http://www.westga.edu/police">University Police</a></li>
+
+<li><a href="http://www.westga.edu/wolvesCard">Wolves Card</a></li>
+
+</ul><ul>
+
+
+<li>
+
+<h2 style="display:none;">
+
+<a href="">Navigation Column 3661</a>
+</h2>
+
+</li>
+
+
+</ul>
+</div>
+
+</li>
+<li>
+
+
+
+<a href="http://uwgsports.com">
+    <span class="menu-item">Wolves&nbsp;Athletics</span>Wolves Athletics
+</a>
+</li>
+<li>
+
+
+
+<a href="/ucm">
+    <span class="menu-item">Press</span>Press
+</a>
+</li>
+
+        </ul>
+</div><!--end nav-->
+
+        <div id="content_container">
+            <div class="clear"></div>                
+            
+                           
+            
+            
+                
+                    <div id="content_sidebar">
+                        <!--
+
+
+
+
+
+
+
+
+-->
+                    </div><!--end content sidebar-->        
+                
+            
+            
+            
+
+            <div id="page_content">
+
+                
+                
+    
+                
+                
+                
+               
+                <div id="breadcrumb_container"> 
+                                   
+                     <a href="/">Home</a><span>&gt;</span><a href="/index_httperrors.php">HTTP Error</a><span>&gt;</span>
+                     <em>500</em>
+                </div><!--end breadcrumb container-->
+        
+                
+    
+                
+                    
+                        
+
+
+
+<h2>Server Error</h2>
+ 
+<P>Please <A href=mailto:www@westga.edu>contact the administrator</A>of this site.</P> 
+                     
+                
+         
+                
+           
+            </div><!--end page content-->
+        </div><!--end content container-->
+    <div class="clear"></div>
+    <div id="footer_container">
+<div id="footer_left">
+<div id="social_container">
+<div id="social_tooltip">&nbsp;</div>
+<div id="social_icons">
+<a id="youtube" href="http://www.youtube.com/uwgucm" title="YouTube"><span>Youtube</span></a>
+<a id="rss" href="/news_rss.php" title="News RSS"><span>RSS</span></a>
+<a id="facebook" href="http://www.facebook.com/pages/University-of-West-Georgia/82958952731" title="Facebook"><span>Facebook</span></a>
+<a id="blog" href="http://www.linkedin.com/company/university-of-west-georgia" title="LinkedIn"><span>UWG LinkedIn</span></a>
+<a id="twitter" href="http://twitter.com/uwgmedia" title="Twitter"><span>Twitter</span></a>
+<a id="uwg_alumni" href="http://www.alumniconnections.com/westga/" title="Alumni"><span>Alumni</span></a>
+</div>
+</div>
+<p class="address"><a href="http://maps.google.com/?daddr=1601+Maple+Street,Carrollton,+GA+30118&submit.x=132&submit.y=8&submit=Get+Directions" target="_blank">1601 Maple St, Carrollton, GA 30118</a>
+<span class="phone">(678)839-5000</span>
+</p>
+<p class="legal">&copy; 2015 University of West Georgia. All rights reserved. </p>
+</div><!--end footer_left-->
+<div id="footer_right">
+<div id="icon_holder">
+<div id="princeton"><a href="http://www.princetonreview.com/college/research/regional/region_southeast.asp"><span>Princeton Review</span></a></div>
+<div id="uwg_athletics"><a href="http://www.uwgsports.com"><span>UWG Athletics</span></a></div>
+<div id="go_west_icon"><a href="http://gowestgeorgia.com"></a></div>
+<div id="give_icon"><a href="http://www.westga.edu/alumni/index_20437.php"><span>Give</span></a></div>
+<div id="fulbright_icon"><a href="http://www.cies.org/chronicle/"><span>Fulbright Scholar</span></a></div>
+
+</div>
+<ul class="footer_toolbar">
+<li><a href="/index_contact.php">Contact Us</a></li>
+<li><a href="/index_map.php">Maps & Directions</a></li>
+<li><a href="/index_a2z.php">A-Z Index</a></li>
+<li><a href="http://events.westga.edu/">Calendars</a></li>
+<li class="text_only"><a href="http://assistive.usablenet.com/tt/www.westga.edu">Text Only</a></li>
+<li class="last"><a href="#">TO TOP &and;</a></li>
+</ul>
+<ul class="footer_toolbar">
+<li><a href="http://www.westga.edu/policy/">Privacy Policy</a></li>
+<li><a href="/index_speakers.php">Statement on Speakers</a></li>
+<li class="last"><a href="http://www.princetonreview.com/college-rankings.aspx">Princeton Review</a></li>
+</ul>
+</div><!--end footer_right-->
+</div><!--end footer_container-->
+    <!-- Published by: ezenner@my.westga.edu (Ewa Zennermann) at 2013-07-16 11:55; version: 1 -->     
+    </div><!--end container-->
+</div><!--end wrapper-->
+
+
+<script type="text/javascript" src="/js/content_functions.js"></script>
+<script type="text/javascript" src="/share/js/sayt_combo.js"></script>
+<script>searchAsYouType.initialize(document.getElementById('searchwords'), true);</script>
+
+<script src=http://www.google-analytics.com/urchin.js type="text/javascript"></script>
+<script type="text/javascript">
+  _userv=2;
+  _uacct="UA-230693-1";
+   urchinTracker();
+</script>
+
+
+</body>
+</html>
