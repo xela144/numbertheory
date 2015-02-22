@@ -46,9 +46,6 @@ def get_remainder(a,b):
 #print("gcd of", tup[0], "and", tup[1], "is", d)
 
 
-# For fun
-#tup = (4**6**6, 10**6**6)
-tup = (2,3)
 # Works much better
 def newgcd(aa,bb):
     b = bb
@@ -64,7 +61,9 @@ def newgcd(aa,bb):
     #print("({},{}) = {}".format(a, b, bb))
     return bb
 
-newgcd(tup[0],tup[1])
+# For fun
+#tup = (4**6**6, 10**6**6)
+#newgcd(tup[0],tup[1])
 
 # recursive not very good with python
 def newgcd_rec(aa,bb):
@@ -74,6 +73,10 @@ def newgcd_rec(aa,bb):
     print(bb)
     return newgcd_rec(bb%aa, aa)
 
+# returns True or False.
+#FIXME deal with 0 cases.
+def coprime(a,b):
+    return newgcd(a,b)<2
 
 # Returns the standard reduced residue system, modulo m
 def reduced_residue_system(m):
@@ -99,6 +102,5 @@ def plot_totient(m):
 
     plt.scatter(index,tot)
     plt.show()
-
 
 
