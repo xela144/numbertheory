@@ -41,6 +41,7 @@ def getDivisors(nn):
             lis.append(i)
         i += 1
         bb = 1
+        #print(bb)
     return lis
 
 
@@ -132,7 +133,7 @@ if __name__ == "__main__":
                 num = int(input("Number of practice problems: "))
                 for i in range(0,num):
                     shuffle(upper)
-                    #a,b = newMultPrac(upper)
+                    #a,b = newMultPrac(upper[0])
                     a,b = buildMultPrac(upper[0])
                     formatLength = len(str(upper[0]))
                     formatString = "{:" + str(formatLength) +"} x {:" + str(formatLength) + "} = "
