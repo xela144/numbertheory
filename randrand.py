@@ -24,7 +24,6 @@ ii.  a - 1 = product of prime factors of m
 iii. if a - 1 mod 4 == 0, then m mod 4 == 0.
 '''
 
-from practiceTables import gcd, isPrime, getDivisors
 import time
 from math import floor, ceil, sqrt, log
 
@@ -76,19 +75,12 @@ class randrand():
         inc = floor(modulus * log(modulus))
 
         # Ensure the incrementor and modulus are relatively prime
-        while not self.coprime(inc, modulus):
+        while not coprime(inc, modulus):
             inc += 1
-            print(inc)
+            #print(inc)
         # Store to class
         self.incrementor = inc
     
-    # Boolean, returns True for relatively prime numbers
-    def coprime(self, a,b):
-        if a*b == 0:
-            print("coprime error: Zero case not implemented")
-            return
-        return gcd(a,b)<2
-
 
     # The multiplier, c, and the modulus, m, must be relatively prime for
     # guarantees on the strength of the randomness.
@@ -127,7 +119,62 @@ class randrand():
             nextRand = self.getRandom()
         return nextRand
 
-    
+''' Helper functions '''
+
+def isPrime(n):
+    if n == 2:
+        return True
+    lim = ceil(sqrt(n))
+    nn = 1
+    while nn <= lim:
+        bb = gcd(nn, n)
+        nn += 1
+        if bb > 1:
+            return False
+    return True
+
+
+def getDivisors(nn):
+    lis = []
+    lim = ceil(nn/2)
+    i = 2
+    #ppp()
+    while i <= lim:
+        bb = nn%i
+        if bb == 0:
+            lis.append(i)
+        i += 1
+        bb = 1
+        #print(bb)
+    return lis
+
+
+# Boolean, returns True for relatively prime numbers
+def coprime(a,b):
+    if a*b == 0:
+        print("coprime error: Zero case not implemented")
+        return
+    return gcd(a,b)<2
+
+def gcd(aa,bb):
+    # debug
+    # a = aa
+    # b = bb
+    cc = aa
+    while aa != 0:
+        cc = aa
+        aa = bb%aa
+        bb = cc
+        # Proxy for gcd:
+        #print(bb)
+    # For debug:
+    #print("({},{}) = {}".format(a, b, bb))
+    return bb
+
+
+
+
+
 if __name__ == "__main__":
     try:
         randgen = randrand()
@@ -145,7 +192,7 @@ if __name__ == "__main__":
         print("And one more thing: if the lower bound is close to the upper bound, this",
               " will also weaken the randomness of the generator by shortening the period.")
         
-        print("\nThe name of the algorithm is 'Linear Congruence Generator'")
+        print("\nThe name of the algorithm is 'Linear Congruence Generator'\n")
         while(True):
 
             # Get the user input
