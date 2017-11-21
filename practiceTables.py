@@ -67,7 +67,7 @@ def getIndices(nn):
         ind1 = randint(0,lim)
         ind2 = nn - ind1 - 1
     return ind1, ind2
-        
+
 def newMultPrac(upper):
     target = 3
     while isPrime(target):
@@ -94,14 +94,25 @@ def multPrac(upper, center):
     return (a, b)
 
 def divPrac(upper):
-    a = randint(2,9)
-    b = randint(2,9)
+    a = randint(2,int(upper/5))
+    b = randint(2,int(upper/9))
     while a*b > upper:
-        a = randint(2,9)
-        b = randint(2,9)
+        # a = randint(2,9)
+        # b = randint(2,9)
+        a = randint(2,int(upper/5))
+        b = randint(2,int(upper/9))
     lis = [a*b, b]
     #shuffle(lis)
     return lis
+
+def buildAddPrac(upper):
+    a = randint(2, upper)
+    b = randint(2, upper)
+    while a+b > upper:
+        a = randint(2, upper)
+        b = randint(2, upper)
+    return (a,b)
+
 
 def processList(lis):
     try:
@@ -115,17 +126,19 @@ def processList(lis):
 
 if __name__ == "__main__":
     try:
-        if input("Choose m or d: ").upper() == 'D': 
+        inp = input("Choose m or d or a: ").upper()
+        if inp == 'D':
             while(True):
                 upper = int(input("Choose an upper bound: "))
                 num = int(input("Number of practice problems: "))
                 for i in range(0,num):
                     a,b = divPrac(upper)
                     formatLength = len(str(upper))
+                    # formatString = "{:" + str(formatLength) +"} ÷ {:" + str(formatLength -1) + "} = "
                     formatString = "{:" + str(formatLength) +"} ÷ {:" + str(formatLength -1) + "} = "
                     print(formatString.format(a,b))
-        
-        else:
+
+        elif inp == 'M':
             while(True):
                 upper = input("Choose a factor, or list of factors (use ',' to separate): ")
                 upper = processList(upper)
@@ -138,5 +151,21 @@ if __name__ == "__main__":
                     formatLength = len(str(upper[0]))
                     formatString = "{:" + str(formatLength) +"} x {:" + str(formatLength) + "} = "
                     print(formatString.format(a,b))
+
+        elif inp == 'A':
+            while(True):
+                upper = int(input("Choose an upper bound for addition: "))
+                #center = int(input("Choose a center for operand 1: "))
+                num = int(input("Number of practice problems: "))
+                for i in range(0,num):
+                    # shuffle(upper)
+                    #a,b = newMultPrac(upper[0])
+                    # import pdb; pdb.set_trace()
+                    a,b = buildAddPrac(upper)
+                    formatLength = len(str(max(a,b)))
+                    formatString = "{:" + str(formatLength) +"} + {:" + str(formatLength) + "} = "
+                    print(formatString.format(a,b))
+
+
     except ValueError:
             print("Goodbye!!!")
